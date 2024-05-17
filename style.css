@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #393E46;
+}
+
+.container {
+    background-color: #222831;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+        scale: 1;
+    }
+    33% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+        scale: 1.05;
+    }
+    66% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+        scale: 1;
+    }
+}
+
+.container:hover {
+    animation: rotateAnimation 0.4s ease;
+}
+
+
+.registration-form h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #EEEEEE;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: #393E46;
+    color: #EEEEEE;
+}
+
+.form-group input:focus,
+.form-group input:not(:placeholder-shown) {
+    outline: none;
+    border-color: #00ADB5;
+}
+
+.form-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #00ADB5;
+    background-color: #222831;
+    border-radius: 10px;
+    border: 1px solid #00ADB5;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    transform-origin: left top;
+    opacity: 0;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    opacity: 1;
+    top: -10px;
+    left: 10px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00ADB5; /* Turquoise background for button */
+    border: none;
+    border-radius: 5px;
+    color: #222831; /* Darker gray text for button */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #008b9d; /* Darker turquoise on hover */
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #393E46 inset !important;
+}
+
+input:-webkit-autofill{
+    -webkit-text-fill-color: #EEEEEE !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+}
